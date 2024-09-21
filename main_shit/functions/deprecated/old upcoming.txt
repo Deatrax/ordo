@@ -1,0 +1,37 @@
+|assignment_name|exam|8|6|2024|
+|assignment_name|assignment|8|6|2024|
+|assignment_name|exam|8|6|2024|
+|alfi|assignment|8|6|2024|
+|jessan|exam|8|6|2024|
+|hasnath|assignment|8|6|2024|
+|rumman|exam|8|6|2024|
+|shoaib|assignment|8|6|2024|
+|ishmam|exam|8|6|2024|
+|annafi|assignment|8|6|2024|
+|shahad|exam|8|6|2024|
+|shiraji|assignment|8|6|2024|
+|rinaldo|exam|8|6|2024|
+|anis|assignment|8|6|2024|
+|abrar|exam|8|6|2024|
+|didhiti|assignment|8|6|2024|
+|mahim|exam|8|6|2024|
+|sadman|assignment|8|6|2024|
+|siam|exam|8|6|2024|
+|tasin|assignment|8|6|2024|
+| _name|exam|8|6|2024|
+| _name|assignment|8|6|2024|
+| _name|exam|8|6|2024|
+| _name|assignment|8|6|2024|
+|shiraji|assignment|8|6|2024|
+|rinaldo|exam|8|6|2024|
+|anis|assignment|8|6|2024|
+|abrar|exam|8|6|2024|
+|didhiti|assignment|8|6|2024|
+|mahim|exam|8|6|2024|
+|sadman|assignment||6|2024|
+|siam|exam|8|6|2024|
+|tasin|assignment|8|6|2024|
+|assignment_name|exam|8|6|2024|
+|assignment_name|assignment|8|6|2024|
+|assignment_name|exam|8|6|2024|
+|assignment_name|assignment|8|6|2024|

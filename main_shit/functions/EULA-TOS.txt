@@ -1,0 +1,100 @@
+End-User License Agreement (EULA)
+
+1. Agreement to Terms
+By accessing or using the beta version of [Your Project Name] (the "Software"), 
+you (the "User") agree to be bound by this End-User License Agreement
+(the "Agreement"). If you do not agree to the terms of this Agreement, you may not use the Software.
+
+2. Beta Version
+This is a closed beta version of the Software, and as such, it is not the 
+final product. The purpose of this beta release is to allow users to test the Software and
+provide feedback on its performance, functionality, and potential issues. The Software may
+be incomplete or contain bugs, and its performance may be unpredictable.
+
+3. License Grant
+[Your Company Name] grants you a non-exclusive, non-transferable, revocable
+license to use the Software solely for the purpose of testing and providing feedback. This
+license is granted for personal, non-commercial use only. You may not sublicense or
+transfer the Software to any third party.
+
+4. Feedback
+As part of the beta testing process, you may provide feedback, suggestions,
+or recommendations regarding the Software. By submitting feedback, you agree that [Your Company
+Name] may use, modify, and incorporate your feedback without any obligation to compensate you.
+
+5. Disclaimers
+The Software is provided "AS IS" without any express or implied warranties.
+[Your Company Name] disclaims all warranties, including but not limited to
+warranties of performance, merchantability, fitness for a particular purpose, and non-infringement. The
+entire risk as to the quality and performance of the Software is with you.
+
+6. Limitation of Liability
+In no event shall [Your Company Name] be liable for any damages, including but
+not limited to direct, indirect, incidental, special, consequential, or punitive damages arising out of
+your use or inability to use the Software, even if [Your Company Name] has been advised of the
+possibility of such damages. This limitation applies to all causes of action, including contract, tort
+(including negligence), strict liability, and breach of warranty.
+
+7. Closed Beta
+The Software is distributed as part of a closed beta program, meaning
+access to the Software is restricted and may only be used by users who have been specifically granted permission
+by [Your Company Name]. Unauthorized access or distribution is prohibited.
+
+8. Termination
+[Your Company Name] reserves the right to terminate this Agreement and your
+access to the Software at any time, with or without cause. Upon termination, you must immediately
+cease using the Software and destroy all copies of the Software in your possession.
+
+9. Governing Law
+This Agreement shall be governed by and construed in accordance with the laws
+of [Your Country/State], without regard to its conflict of laws principles.
+
+Terms of Service (ToS)
+
+1. Acceptance of Terms
+By using the beta version of [Your Project Name] (the "Service"), you agree
+to be bound by these Terms of Service (the "Terms"). If you do not agree to these Terms, you must
+stop using the Service immediately.
+
+2. Beta Program
+The Service is currently in a closed beta stage. This means that the Service is
+still under development, and its features, functionality, and performance may not be fully implemented or
+stable. The primary purpose of this beta release is to receive user feedback.
+
+3. User Responsibilities
+You agree to use the Service only for lawful purposes and in a way that does not
+infringe on the rights of others. You are responsible for your conduct while using the Service, including ensuring
+that your use complies with applicable laws and regulations.
+
+4. No Warranty
+The Service is provided "AS IS" without warranties of any kind, either express or
+implied, including but not limited to implied warranties of merchantability, fitness for a particular
+purpose, or non-infringement. [Your Company Name] does not guarantee that the Service will be error-free,
+uninterrupted, or that any defects will be corrected.
+
+5. Limitation of Liability
+To the fullest extent permitted by law, [Your Company Name] will not be liable for any
+damages arising from your use of the Service, including but not limited to direct, indirect, incidental,
+consequential, or punitive damages. This includes any loss of data, revenue, or profits, and any other commercial damages or losses, even if [Your Company Name] has been advised of the possibility of such damages.
+
+6. Data Collection
+As part of the beta testing process, [Your Company Name] may collect certain data
+related to your use of the Service. This data may include information on bugs, crashes, or general usage patterns. All
+data collected will be used solely to improve the Service and will be handled in accordance with our Privacy Policy.
+
+7. Termination of Access
+[Your Company Name] reserves the right to terminate or suspend your access to the
+Service at any time, for any reason, without notice or liability.
+
+8. Updates
+During the beta phase, [Your Company Name] may provide updates to the Service that
+improve functionality or address issues. You agree to install any such updates to continue using the Service.
+
+9. Governing Law
+These Terms shall be governed by the laws of [Your Country/State], without regard
+to conflict of laws principles.
+
+10. Changes to Terms
+[Your Company Name] reserves the right to modify or update these Terms at any time. If changes are made, you will be notified, and your continued use of the Service
+will constitute acceptance of the new Terms.
+

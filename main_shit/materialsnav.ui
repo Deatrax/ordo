@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>materialsNav</class>
+ <widget class="QWidget" name="materialsNav">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>596</width>
+    <height>433</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="styleSheet">
+      <string notr="true">border:0px;</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>361</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="materialNavBackButton">
+        <property name="styleSheet">
+         <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addFileButton">
+        <property name="styleSheet">
+         <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Add file</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="closetab">
+        <property name="styleSheet">
+         <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Close Tab</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="page_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>171</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>236</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{border:0px;}
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="subNotesButton">
+            <property name="styleSheet">
+             <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+            </property>
+            <property name="text">
+             <string>Notes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="subBooksButton">
+            <property name="styleSheet">
+             <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+            </property>
+            <property name="text">
+             <string>Books</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="subSlidesButton">
+            <property name="styleSheet">
+             <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+            </property>
+            <property name="text">
+             <string>Slides</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="OtherButton">
+            <property name="text">
+             <string>Other FIles and Subfolders</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="NavVIewButton">
+            <property name="text">
+             <string>Open Navigation View</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>171</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>576</width>
+            <height>359</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <property name="spacing">
+            <number>3</number>
+           </property>
+           <property name="leftMargin">
+            <number>2</number>
+           </property>
+           <property name="topMargin">
+            <number>2</number>
+           </property>
+           <property name="rightMargin">
+            <number>2</number>
+           </property>
+           <property name="bottomMargin">
+            <number>2</number>
+           </property>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

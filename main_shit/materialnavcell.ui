@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>materialNavCell</class>
+ <widget class="QWidget" name="materialNavCell">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>428</width>
+    <height>45</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>45</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="container" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="itemName">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="renameBox">
+        <property name="maxLength">
+         <number>20</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="renameButton">
+        <property name="styleSheet">
+         <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>rename</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ItemDeleteButton">
+        <property name="styleSheet">
+         <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ItemOpenButton">
+        <property name="styleSheet">
+         <string notr="true">
+
+/* CSS */
+QPushButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 5px;
+  color: #0d172a;
+  font-family: &quot;Basier circle&quot;,-apple-system,system-ui,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration:none #0d172a solid;
+}
+
+QPushButton:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Open</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
