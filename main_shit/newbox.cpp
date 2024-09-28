@@ -6,6 +6,7 @@
 #include "first_run.h"
 #include <QFileDialog>
 #include <iostream>
+#include <QMessageBox>
 
 newbox::newbox(primary_window *mainwindow, QWidget *parent)
     : QGroupBox(parent)
@@ -51,7 +52,22 @@ void newbox::on_pushButton_clicked()
     if(!dirrExists){
         std::string newpath=selectDirectory();
         qDebug("got the new file path=%s",newpath.c_str());
-        std::string output=arr;
+        std::string output;
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(nullptr, "Confirmation", "Do you want to change the course name according to the name of the folder as well?",
+                                      QMessageBox::Yes | QMessageBox::No);
+
+        // Check the user's response and execute code accordingly
+        if (reply == QMessageBox::Yes) {
+            // Code to execute if "Yes" is clicked
+            std::cout << "User clicked Yes!" << std::endl;
+            output=getFolderName(newpath);
+        } else {
+            // Code to execute if "No" is clicked
+            std::cout << "User clicked No!" << std::endl;
+            output=arr;
+        }
+
         output+=","+newpath+"/";
         qDebug("got the new course data=%s || and the line number is=%d",output.c_str(),lineNum);
         m_mainWindow->updateCourse(output,lineNum);
@@ -89,3 +105,18 @@ std::string newbox::selectDirectory() {
     return directory;
 }
 
+#include <QFileInfo>
+#include <QDir>
+
+std::string newbox::getFolderName(const std::string& folderPath) {
+    // Convert std::string to QString
+    QString qFolderPath = QString::fromStdString(folderPath);
+
+    // Use QFileInfo to extract the folder name
+    QFileInfo folderInfo(qFolderPath);
+
+    // Return the folder name using the fileName() method (last component of the path)
+    QString folderName = folderInfo.fileName();
+
+    return folderName.toStdString();  // Convert QString to std::string
+}

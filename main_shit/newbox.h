@@ -31,6 +31,7 @@ private:
     primary_window *m_mainWindow;
     int lineNum;
     bool dirrExists;
+    std::string getFolderName(const std::string &folderPath);
 };
 
 #endif // NEWBOX_H
