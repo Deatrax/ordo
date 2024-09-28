@@ -52,7 +52,7 @@ void newbox::on_pushButton_clicked()
         std::string newpath=selectDirectory();
         qDebug("got the new file path=%s",newpath.c_str());
         std::string output=arr;
-        output+=","+newpath;
+        output+=","+newpath+"/";
         qDebug("got the new course data=%s || and the line number is=%d",output.c_str(),lineNum);
         m_mainWindow->updateCourse(output,lineNum);
         return;
