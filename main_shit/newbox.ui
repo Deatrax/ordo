@@ -68,6 +68,28 @@ QPushButton:hover{
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QLabel" name="errMsg">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	font: 600  9pt &quot;Segoe UI&quot; ;
+	color:red;
+</string>
+   </property>
+   <property name="text">
+    <string>Folder not found
+ please repair folder</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

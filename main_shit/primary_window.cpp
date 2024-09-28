@@ -348,7 +348,7 @@ void primary_window::on_all_material_button_clicked()
         printf("\nNewbox created");
         nb[i]->setFixedWidth(184);
         nb[i]->setFixedHeight(243);
-        nb[i]->innit(corsCont[i].course_name, corsCont[i].coursePath);
+        nb[i]->innit(corsCont[i].course_name, corsCont[i].coursePath,(i+1));
         printf("\nnewbox set text is=%s\n\n",corsCont[i].course_name);
         // Set the stylesheet
         //nb->setStyleSheet(style);

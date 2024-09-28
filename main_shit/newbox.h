@@ -16,18 +16,21 @@ class newbox : public QGroupBox
 public:
     Ui::newbox *ui;
     explicit newbox(primary_window *mainWindow,QWidget *parent = nullptr);
-    void innit(char *str, char* str2);
+    void innit(char *str, char* str2, int lineNo);
     ~newbox();
 
     char arr[50];
     char courseFolderPath[650];
     int activeTab=0;
     QWidget* targTab;
+    std::string selectDirectory();
 private slots:
     void on_pushButton_clicked();
 
 private:
     primary_window *m_mainWindow;
+    int lineNum;
+    bool dirrExists;
 };
 
 #endif // NEWBOX_H

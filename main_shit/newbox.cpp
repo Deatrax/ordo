@@ -3,6 +3,9 @@
 #include "ui_newbox.h"
 #include "primary_window.h"
 #include "StylesSheets.h"
+#include "first_run.h"
+#include <QFileDialog>
+#include <iostream>
 
 newbox::newbox(primary_window *mainwindow, QWidget *parent)
     : QGroupBox(parent)
@@ -19,12 +22,22 @@ newbox::newbox(primary_window *mainwindow, QWidget *parent)
     //connect(ui->pushButton, &QPushButton::clicked, this, &newbox::on_pushButton_clicked);
 }
 
-void newbox::innit(char *str, char* str2)
+void newbox::innit(char *str, char* str2,int lineNo)
 {
     ui->course_name->setText(str);
     if(str[strlen(str)-1]=='\n') str[strlen(str)-1]='\0';
     strcpy(arr, str);
     strcpy(courseFolderPath,str2);
+
+    if(!directoryExists(courseFolderPath)){
+        dirrExists=false;
+        ui->pushButton->setText("Repair");
+
+    }
+    else{
+        dirrExists=true;
+        ui->errMsg->hide();
+    }
 }
 
 newbox::~newbox()
@@ -35,6 +48,13 @@ newbox::~newbox()
 //this is the open button
 void newbox::on_pushButton_clicked()
 {
+    if(!dirrExists){
+        std::string newpath=selectDirectory();
+        qDebug("got the new file path=%s",newpath.c_str());
+
+        return;
+    }
+
     if(activeTab){
         m_mainWindow->gototab(targTab);
         return;
@@ -43,3 +63,26 @@ void newbox::on_pushButton_clicked()
     qDebug("value returned upon opening=%d",activeTab);
     activeTab++;
 }
+
+
+
+std::string newbox::selectDirectory() {
+    // Open a QFileDialog to select a directory
+    QString dirPath = QFileDialog::getExistingDirectory(
+        nullptr,
+        "Select Directory",
+        "",
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+        );
+
+    // Check if a valid directory is selected
+    if (dirPath.isEmpty()) {
+        std::cerr << "No directory selected!" << std::endl;
+        return "";
+    }
+
+    // Convert QString to std::string
+    std::string directory = dirPath.toStdString();
+    return directory;
+}
+
