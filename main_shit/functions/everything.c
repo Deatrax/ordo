@@ -1926,19 +1926,80 @@ static int alphaBsort(char str[MAX_FILES][MAX_NAME_LEN]) {
     return 0; // Return 0 to indicate success
 }
 
+
+#include <stdio.h>
+#include <sys/stat.h>
+
+#ifdef _WIN32
+    #include <direct.h>
+    #include <windows.h>
+    #define stat _stat  // Use _stat for Windows
+#endif
+
+// Cross-platform function to check if a directory exists
+static int directoryExists(const char *path) {
+    #ifdef _WIN32
+    DWORD attribs = GetFileAttributesA(path);
+    if (attribs == INVALID_FILE_ATTRIBUTES) {
+        return 0;  // Directory doesn't exist
+    }
+    if (attribs & FILE_ATTRIBUTE_DIRECTORY) {
+        return 1;  // It's a directory
+    }
+    return 0;  // It's a file, not a directory
+    #else
+    struct stat info;
+    if (stat(path, &info) != 0) {
+        return 0;  // Directory doesn't exist
+    }
+    return (info.st_mode & S_IFDIR) ? 1 : 0;  // Check if it's a directory
+    #endif
+}
+
+// Cross-platform function to check if a file exists
+static int fileExists(const char *path) {
+    FILE *file = fopen(path, "r");
+    if (file != NULL) {
+        fclose(file);
+        return 1;  // File exists
+    } else {
+        return 0;  // File does not exist
+    }
+}
+
+
+/// @brief driver function to test directoryExists and fileExists
+/// @return 
+// int main() {
+//     const char *dirPath = "C:\\Users\\PC\\Documents\\1. All My Stuff\\Coding";
+//     const char *filePath = "C:\\Users\\PC\\Documents\\1. All My Stuff\\Coding\\test.txt";
+//     // Check if the directory exists
+//     if (directoryExists(dirPath)) {
+//         printf("Directory exists\n");
+//     } else {
+//         printf("Directory does not exist\n");
+//     }
+//     // Check if the file exists
+//     if (fileExists(filePath)) {
+//         printf("File exists\n");
+//     } else {
+//         printf("File does not exist\n");
+//     }
+//     return 0;
+// }
+
+
 //driver function for running test of appdata related activites
 // int main() {
 //     char dir[260];
 //     getAppData_folder(dir);
 //     char file[260] = "my_file.txt";
 //     make_appData_filePath(file);
-
 //     if (ensure_directory_and_open_file(dir, file, "w") == 0) {
 //         printf("File opened successfully.\n");
 //     } else {
 //         printf("Failed to open file.\n");
 //     }
-
 //     return 0;
 // }
 

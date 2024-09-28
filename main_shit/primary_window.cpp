@@ -46,12 +46,11 @@ primary_window::primary_window(QWidget *parent)
     setAcceptDrops(true);
     ui->tabWidget_2->removeTab(1);
 
-    QVBoxLayout* layout = new QVBoxLayout;
 
-    // Add your custom FileDropWidget to the layout
+    // Add custom FileDropWidget to the layout
+    QVBoxLayout* layout = new QVBoxLayout;
     FileDropWidget* dropWidget = new FileDropWidget;
     layout->addWidget(dropWidget);
-
     ui->dropArea->setLayout(layout);
 
 

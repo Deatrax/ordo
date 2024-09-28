@@ -39,7 +39,7 @@ void ChangeSemester::on_saveCourseButton_clicked()
     qDebug("the course name is %s\npath is=%s",buff.toStdString().c_str(),coursePath);
     QString output=buff+","+coursePath+",";
     char* arr2=allocate1DCharArray(output.length()+1);
-    snprintf(arr2,output.length(),"%s\0",output.toStdString().c_str());
+    snprintf(arr2,output.length(),"%s\0",output.toStdString().c_str()); //adding the null terminator
     addLine(coursedatPath,-1,arr2);
     ensure_directory_and_open_file(coursePath,NULL,"a");
     char subdir[1000]={0};
