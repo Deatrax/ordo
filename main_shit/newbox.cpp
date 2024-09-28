@@ -54,7 +54,7 @@ void newbox::on_pushButton_clicked()
         std::string output=arr;
         output+=","+newpath;
         qDebug("got the new course data=%s || and the line number is=%d",output.c_str(),lineNum);
-        m_mainWindow->updateCourse(output);
+        m_mainWindow->updateCourse(output,lineNum);
         return;
     }
 

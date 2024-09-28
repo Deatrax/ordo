@@ -1303,9 +1303,15 @@ void primary_window::on_addCourseButton_clicked()
 }
 
 
-void primary_window::updateCourse(std::string newPath){
+void primary_window::updateCourse(std::string newPath,int line){
 
     qDebug("got from call=%s\nthe file to modify is =%s",newPath.c_str(), coursedatPath);
+    char* arr2=allocate1DCharArray(newPath.length()+4);
+    snprintf(arr2,(newPath.length()+1),"%s\0",newPath.c_str()); //adding the null terminator
+    replaceLINE(coursedatPath,line,arr2);
+    free1DCharArray(arr2);
+    resetFlag(1);
+    on_all_material_button_clicked();
 }
 
 ///

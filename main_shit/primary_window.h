@@ -127,7 +127,7 @@ public:
     QGroupBox *formaterialsTabs();
     void loadMiniRoutine();
     void refreshCurrentPage();
-    void updateCourse(std::string newPath);
+    void updateCourse(std::string newPath, int line);
 private slots:
     void on_home_button_clicked();
 
