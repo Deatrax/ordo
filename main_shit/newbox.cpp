@@ -22,13 +22,13 @@ newbox::newbox(primary_window *mainwindow, QWidget *parent)
     //connect(ui->pushButton, &QPushButton::clicked, this, &newbox::on_pushButton_clicked);
 }
 
-void newbox::innit(char *str, char* str2,int lineNo)
+void newbox::innit(char *courseName, char* str2,int lineNo)
 {
-    ui->course_name->setText(str);
-    if(str[strlen(str)-1]=='\n') str[strlen(str)-1]='\0';
-    strcpy(arr, str);
+    ui->course_name->setText(courseName);
+    if(courseName[strlen(courseName)-1]=='\n') courseName[strlen(courseName)-1]='\0';
+    strcpy(arr, courseName);
     strcpy(courseFolderPath,str2);
-
+    lineNum=lineNo;
     if(!directoryExists(courseFolderPath)){
         dirrExists=false;
         ui->pushButton->setText("Repair");
@@ -51,7 +51,10 @@ void newbox::on_pushButton_clicked()
     if(!dirrExists){
         std::string newpath=selectDirectory();
         qDebug("got the new file path=%s",newpath.c_str());
-
+        std::string output=arr;
+        output+=","+newpath;
+        qDebug("got the new course data=%s || and the line number is=%d",output.c_str(),lineNum);
+        m_mainWindow->updateCourse(output);
         return;
     }
 

@@ -1302,6 +1302,12 @@ void primary_window::on_addCourseButton_clicked()
     inst->show();
 }
 
+
+void primary_window::updateCourse(std::string newPath){
+
+    qDebug("got from call=%s\nthe file to modify is =%s",newPath.c_str(), coursedatPath);
+}
+
 ///
 /// \brief primary_window::resetFlag resets the skip ui generation flag for the selected page
 /// \param flag 1 for materials, 2 for routine, 3 for external links, 4 for assignemnt, 5 for upcomming, 6 for exams

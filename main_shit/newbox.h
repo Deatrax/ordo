@@ -16,7 +16,7 @@ class newbox : public QGroupBox
 public:
     Ui::newbox *ui;
     explicit newbox(primary_window *mainWindow,QWidget *parent = nullptr);
-    void innit(char *str, char* str2, int lineNo);
+    void innit(char *courseName, char* str2, int lineNo);
     ~newbox();
 
     char arr[50];
