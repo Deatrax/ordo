@@ -157,7 +157,7 @@
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_2">
+               <widget class="QLabel" name="customFolderMsg">
                 <property name="text">
                  <string>Add an already existing folder? 
  By default one is created unless

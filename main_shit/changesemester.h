@@ -21,11 +21,17 @@ public:
     char semesterPath[512];
     char coursedatPath[550];
     void setToAdd();
+    std::string selectDirectory();
+    void customFolderFunction();
 private slots:
     void on_saveCourseButton_clicked();
 
+    void on_addFolderButton_clicked();
+
 private:
     Ui::ChangeSemester *ui;
+    std::string customFolder;
+    bool customFolderadded=false;
 protected:
     void closeEvent(QCloseEvent *event) override;
 signals:
