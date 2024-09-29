@@ -13,6 +13,7 @@ ChangeSemester::ChangeSemester(QWidget *parent)
     ui->saveCourseButton->setStyleSheet(buttonStyle);
     ui->AddCourseCentreBox->setStyleSheet(islandStyle);
     ui->newCourseName_LE->setStyleSheet(LabelStyleBordered);
+    ui->addFolderButton->setStyleSheet(buttonStyle);
 }
 
 ChangeSemester::~ChangeSemester()

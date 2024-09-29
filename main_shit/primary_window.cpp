@@ -50,6 +50,7 @@ primary_window::primary_window(QWidget *parent)
     // Add custom FileDropWidget to the layout
     QVBoxLayout* layout = new QVBoxLayout;
     FileDropWidget* dropWidget = new FileDropWidget;
+    ui->dropArea->setStyleSheet(LabelStyleBordered);
     layout->addWidget(dropWidget);
     ui->dropArea->setLayout(layout);
 
