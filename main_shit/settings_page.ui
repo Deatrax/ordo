@@ -276,41 +276,58 @@ color:black;
                <property name="title">
                 <string/>
                </property>
-               <widget class="QCheckBox" name="checkBox">
-                <property name="geometry">
-                 <rect>
-                  <x>70</x>
-                  <y>0</y>
-                  <width>141</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-                <property name="layoutDirection">
-                 <enum>Qt::RightToLeft</enum>
-                </property>
-                <property name="text">
-                 <string>Start up at login    </string>
-                </property>
-                <property name="checked">
-                 <bool>false</bool>
-                </property>
-               </widget>
-               <widget class="QCheckBox" name="checkBox_2">
-                <property name="geometry">
-                 <rect>
-                  <x>260</x>
-                  <y>0</y>
-                  <width>181</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-                <property name="layoutDirection">
-                 <enum>Qt::RightToLeft</enum>
-                </property>
-                <property name="text">
-                 <string>Minimize to tray on close    </string>
-                </property>
-               </widget>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QCheckBox" name="checkBox">
+                  <property name="layoutDirection">
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:0px solid black;
+border-radius: 10px;
+font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 2px;
+color:black;
+</string>
+                  </property>
+                  <property name="text">
+                   <string>Start up at login    :</string>
+                  </property>
+                  <property name="checked">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBox_2">
+                  <property name="layoutDirection">
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:0px solid black;
+border-radius: 10px;
+font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 2px;
+color:black;
+</string>
+                  </property>
+                  <property name="text">
+                   <string>Minimize to tray on close    :</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_4">
+               <property name="title">
+                <string/>
+               </property>
               </widget>
              </item>
              <item>
@@ -333,7 +350,7 @@ color:black;
         </widget>
         <widget class="QWidget" name="SettingsTab2">
          <attribute name="title">
-          <string>Tab 1</string>
+          <string>Semester Settings</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout">
           <property name="spacing">
@@ -385,6 +402,67 @@ color:black;
           </item>
           <item>
            <widget class="QGroupBox" name="GeneralSettignsTitleBar">
+            <property name="title">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="FileSettings">
+         <attribute name="title">
+          <string>File Settings</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>29</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border:0px solid black;
+border-radius: 10px;
+font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 2px;
+color:black;
+</string>
+            </property>
+            <property name="text">
+             <string>File Settings</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="GeneralSettignsTitleBar_3">
             <property name="title">
              <string/>
             </property>
