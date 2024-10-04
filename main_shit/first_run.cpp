@@ -35,7 +35,7 @@ first_run::first_run(QWidget *parent)
 {
     ui->setupUi(this);
 
-
+    ui->setupPages->setCurrentIndex(0);
     //=====ANIMATION=======================>
     QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect();
     ui->start_button->setGraphicsEffect(eff);

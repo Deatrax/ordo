@@ -23,11 +23,11 @@ QMainWindow {background-image:url(C/Users/PC/Downloads/Qtbackground_img.png);}</
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_10">
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
+     <widget class="QStackedWidget" name="setupPages">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="page_3">
+      <widget class="QWidget" name="setupPage1">
        <layout class="QHBoxLayout" name="horizontalLayout_11">
         <item>
          <widget class="QGroupBox" name="groupBox">
@@ -283,6 +283,9 @@ border: 0px;</string>
               <layout class="QHBoxLayout" name="horizontalLayout">
                <item>
                 <widget class="QRadioButton" name="radioButton">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="text">
                   <string>Personal Use</string>
                  </property>
@@ -290,6 +293,9 @@ border: 0px;</string>
                </item>
                <item>
                 <widget class="QRadioButton" name="radioButton_2">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="text">
                   <string>Multi user</string>
                  </property>
@@ -639,7 +645,78 @@ with your Experience!</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_4"/>
+      <widget class="QWidget" name="setupPage2">
+       <layout class="QHBoxLayout" name="horizontalLayout_21">
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>571</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius: 15px;
+            background-color: floralwhite;</string>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <widget class="QWidget" name="horizontalLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>10</y>
+             <width>571</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>190</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 26pt &quot;Georgia&quot;;
+text-align:center;
+color: black;</string>
+              </property>
+              <property name="text">
+               <string>Initial Settings</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
