@@ -21,185 +21,186 @@ QMainWindow {background-image:url(C/Users/PC/Downloads/Qtbackground_img.png);}</
    <property name="styleSheet">
     <string notr="true">background-color:rgb(25, 22, 51);</string>
    </property>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>97</x>
-      <y>41</y>
-      <width>571</width>
-      <height>400</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>571</width>
-      <height>400</height>
-     </size>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 15px;
-            background-color: floralwhite;</string>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <widget class="QGroupBox" name="login_box">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>160</y>
-       <width>151</width>
-       <height>141</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border:3px solid black</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <layout class="QHBoxLayout" name="horizontalLayout_10">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_3">
+       <layout class="QHBoxLayout" name="horizontalLayout_11">
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QGroupBox" name="groupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
-            <height>20</height>
+            <width>571</width>
+            <height>400</height>
            </size>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 14px  &quot;Georgia&quot;;
+           <string notr="true">border-radius: 15px;
+            background-color: floralwhite;</string>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <widget class="QGroupBox" name="login_box">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>160</y>
+             <width>151</width>
+             <height>141</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border:3px solid black</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 14px  &quot;Georgia&quot;;
 color: black;
 border: 0px;</string>
-          </property>
-          <property name="text">
-           <string>Create Primary User</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLineEdit" name="username">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>123</width>
-            <height>10</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: white;
+                </property>
+                <property name="text">
+                 <string>Create Primary User</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLineEdit" name="username">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>123</width>
+                  <height>10</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
 color:black;
 border-radius:5px;
 border: 2px black;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string>username</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLineEdit" name="password">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>123</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: white;
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="placeholderText">
+                 <string>username</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLineEdit" name="password">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>123</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
 color:black;
 border-radius:5px;
 border: 2px black;</string>
-          </property>
-          <property name="maxLength">
-           <number>16</number>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string>4-digit pin</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QPushButton" name="user_create">
-     <property name="geometry">
-      <rect>
-       <x>73</x>
-       <y>310</y>
-       <width>81</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>81</width>
-       <height>21</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>81</width>
-       <height>21</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+                </property>
+                <property name="maxLength">
+                 <number>16</number>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="placeholderText">
+                 <string>4-digit pin</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QPushButton" name="user_create">
+           <property name="geometry">
+            <rect>
+             <x>73</x>
+             <y>310</y>
+             <width>81</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>81</width>
+             <height>21</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>81</width>
+             <height>21</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
 QPushButton{
 	background-color:#7ac28d;
 	border-radius:5px;
@@ -209,136 +210,136 @@ QPushButton:hover{
 	background-color:rgb(152, 243, 175);
 	border-radius:5px;
 }</string>
-     </property>
-     <property name="text">
-      <string>Create</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="horizontalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>10</y>
-       <width>571</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>190</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 26pt &quot;Georgia&quot;;
+           </property>
+           <property name="text">
+            <string>Create</string>
+           </property>
+          </widget>
+          <widget class="QWidget" name="horizontalLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>10</y>
+             <width>571</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>190</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 26pt &quot;Georgia&quot;;
 text-align:center;
 color: black;</string>
-        </property>
-        <property name="text">
-         <string>Welcome</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="horizontalLayoutWidget_5">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>90</y>
-       <width>571</width>
-       <height>44</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
-       <widget class="QGroupBox" name="groupBox_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 14px  &quot;Georgia&quot;;
+              </property>
+              <property name="text">
+               <string>Welcome</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="horizontalLayoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>90</y>
+             <width>571</width>
+             <height>44</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 14px  &quot;Georgia&quot;;
 color: black;
 border: 0px;</string>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QRadioButton" name="radioButton">
-           <property name="text">
-            <string>Personal Use</string>
-           </property>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QRadioButton" name="radioButton">
+                 <property name="text">
+                  <string>Personal Use</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="radioButton_2">
+                 <property name="text">
+                  <string>Multi user</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="radioButton_2">
-           <property name="text">
-            <string>Multi user</string>
+          <widget class="QGroupBox" name="stuff_box">
+           <property name="geometry">
+            <rect>
+             <x>223</x>
+             <y>160</y>
+             <width>301</width>
+             <height>176</height>
+            </rect>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QGroupBox" name="stuff_box">
-     <property name="geometry">
-      <rect>
-       <x>223</x>
-       <y>160</y>
-       <width>301</width>
-       <height>176</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_7">
-        <item>
-         <widget class="QLabel" name="label_3">
-          <property name="styleSheet">
-           <string notr="true">font: 18px  &quot;Georgia&quot;;
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="styleSheet">
+                 <string notr="true">font: 18px  &quot;Georgia&quot;;
 color: black;
 border: 0px;</string>
-          </property>
-          <property name="text">
-           <string>• Set home directory</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="home_dir_button">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>76</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton{
+                </property>
+                <property name="text">
+                 <string>• Set home directory</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="home_dir_button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>76</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
 	background-color:rgb(217, 217, 217);
 	color:black;
 	border-radius:5px;
@@ -350,89 +351,89 @@ QPushButton:hover{
 	border-radius:5px;
 	border: 1px solid white;
 }</string>
-          </property>
-          <property name="text">
-           <string>Select file</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QLabel" name="home_dir">
-        <property name="styleSheet">
-         <string notr="true">background-color: white;
+                </property>
+                <property name="text">
+                 <string>Select file</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="home_dir">
+              <property name="styleSheet">
+               <string notr="true">background-color: white;
 color:black;
 border-radius:5px;
 border: 2px black;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="styleSheet">
-           <string notr="true">font: 18px  &quot;Georgia&quot;;
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="styleSheet">
+                 <string notr="true">font: 18px  &quot;Georgia&quot;;
 color: black;
 border: 0px;</string>
-          </property>
-          <property name="text">
-           <string>• Set your preferred display name</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="get_display_name">
-        <property name="styleSheet">
-         <string notr="true">background-color: white;
+                </property>
+                <property name="text">
+                 <string>• Set your preferred display name</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="get_display_name">
+              <property name="styleSheet">
+               <string notr="true">background-color: white;
 color:black;
 border-radius:5px;
 border: 2px black;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="placeholderText">
-         <string>type display name here</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_8">
-        <item>
-         <widget class="QLabel" name="label_9">
-          <property name="styleSheet">
-           <string notr="true">font: 18px  &quot;Georgia&quot;;
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="placeholderText">
+               <string>type display name here</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="styleSheet">
+                 <string notr="true">font: 18px  &quot;Georgia&quot;;
 color: black;
 border: 0px;</string>
-          </property>
-          <property name="text">
-           <string>• Upload preset template</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="template_button">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>76</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">
+                </property>
+                <property name="text">
+                 <string>• Upload preset template</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="template_button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>76</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
 QPushButton{
 	background-color:rgb(217, 217, 217);
 	color:black;
@@ -445,64 +446,64 @@ QPushButton:hover{
 	border-radius:5px;
 	border: 1px solid white;
 }</string>
-          </property>
-          <property name="text">
-           <string>Select</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QLabel" name="template_slec">
-        <property name="styleSheet">
-         <string notr="true">background-color: white;
+                </property>
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="template_slec">
+              <property name="styleSheet">
+               <string notr="true">background-color: white;
 color:black;
 border-radius:5px;
 border: 2px black;</string>
-        </property>
-        <property name="text">
-         <string>none selected</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-     <zorder>template_slec</zorder>
-     <zorder>home_dir</zorder>
-     <zorder>get_display_name</zorder>
-    </widget>
-    <widget class="QPushButton" name="letsGO_button">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>340</y>
-       <width>90</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
+              </property>
+              <property name="text">
+               <string>none selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+           <zorder>template_slec</zorder>
+           <zorder>home_dir</zorder>
+           <zorder>get_display_name</zorder>
+          </widget>
+          <widget class="QPushButton" name="letsGO_button">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>340</y>
+             <width>90</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>90</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
 	border-radius:15px;
 	border: 3px solid rgb(40, 101, 191);
 	/*border: 3px solid qlineargradient( x1:0, y1:0.5,x2:1,y2:0.5,
@@ -519,79 +520,79 @@ QPushButton:hover{
 	color: white;
 	background-color:rgb(114, 119, 130);
 }</string>
-     </property>
-     <property name="text">
-      <string>Let's Go!</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="hide_box">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>90</y>
-       <width>531</width>
-       <height>281</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius:15px;
+           </property>
+           <property name="text">
+            <string>Let's Go!</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="hide_box">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>90</y>
+             <width>531</width>
+             <height>281</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-radius:15px;
 background:white;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="paadding">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>190</y>
-       <width>120</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius:15px;
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="paadding">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>190</y>
+             <width>120</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-radius:15px;
 background:white;</string>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-     <widget class="QPushButton" name="start_button">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>90</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>90</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>90</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QPushButton" name="start_button">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>30</y>
+              <width>90</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>90</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>90</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
 	border-radius:15px;
 	border: 3px solid rgb(40, 101, 191);
 	/*border: 3px solid qlineargradient( x1:0, y1:0.5,x2:1,y2:0.5,
@@ -608,33 +609,40 @@ QPushButton:hover{
 	color: white;
 	background-color:rgb(114, 119, 130);
 }</string>
-      </property>
-      <property name="text">
-       <string>START!</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="introText">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>210</y>
-       <width>231</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius:15px;
+            </property>
+            <property name="text">
+             <string>START!</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QLabel" name="introText">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>210</y>
+             <width>231</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-radius:15px;
 background:white;
 font: 600 12pt &quot;Segoe UI&quot; ;
 	color:black;</string>
-     </property>
-     <property name="text">
-      <string>Let's Get Started 
+           </property>
+           <property name="text">
+            <string>Let's Get Started 
 with your Experience!</string>
-     </property>
-    </widget>
-   </widget>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_4"/>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
