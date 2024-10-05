@@ -126,15 +126,20 @@ int primary_window::loadConfig(){
 
         setWindowTitle("Ordo");
         loadMiniRoutine();
-
-        fgets(buff,498,fp);
+    //get and set the tray icon flag
         fgets(buff,498,fp);
         if (char *p = strrchr(buff, '\n')) *p = '\0';
         qDebug("got the last  line=%s",buff);
         if(!strcmp("tray enabled",buff))trayEnabled=true;
         else trayEnabled=false;
+    //get and set the run at login status
+        fgets(buff,498,fp);
+        if (char *p = strrchr(buff, '\n')) *p = '\0';
+        qDebug("got the last  line=%s",buff);
+        if(!strcmp("login enabled",buff))loginEnabled=true;
+        else loginEnabled=false;
 
-
+    //finish load config
     if(fp!=NULL) fclose(fp);
     return 0;
 }
@@ -1478,8 +1483,12 @@ void primary_window::closeEvent(QCloseEvent *event)
         hide();
 
         event->ignore();
+        return;
     }
+    trayIcon->hide();
 }
 
-
+void primary_window::trayVisibility(bool flag){
+    flag? trayIcon->show() : trayIcon->hide();
+}
 //=======END OF TRAY ICON===========================

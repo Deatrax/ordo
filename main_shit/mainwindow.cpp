@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
             fclose(FRUN);
         engage();
     }
-    else{
+    else{         if(FRUN!=NULL) fclose(FRUN);
         FILE *fp=fopen(file0,"rb");
         if(fp==NULL){
             show();

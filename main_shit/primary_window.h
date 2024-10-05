@@ -85,6 +85,8 @@ public:
             return hours * 100 + minutes;
         }
     };
+    //end of class time data class
+
     void sortClassTimes(std::vector<classTimeData>& classTimes) {
         std::sort(classTimes.begin(), classTimes.end(), classTimeData::compareByMilTime);
     }
@@ -116,6 +118,7 @@ public:
     int newboxLimit=0;
     FlowLayout *layout;
     bool trayEnabled=true;
+    bool loginEnabled;
 
 
     void clearLayout(QLayout *layout);
@@ -132,6 +135,7 @@ public:
     void loadMiniRoutine();
     void refreshCurrentPage();
     void updateCourse(std::string newPath, int line);
+    void trayVisibility(bool flag);
 private slots:
     void on_home_button_clicked();
 
@@ -189,6 +193,7 @@ private:
     void createSysTray();
     void setClickableOptions(bool visible);
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
+
 
 protected:
     void closeEvent(QCloseEvent *event) override;
