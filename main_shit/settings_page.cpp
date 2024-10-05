@@ -22,3 +22,15 @@ settings_page::settings_page(primary_window *mainwindow,QWidget *parent)
 settings_page::~settings_page(){
     delete ui;
 }
+
+void settings_page::on_loginCheckBox_clicked(bool checked)
+{
+
+}
+
+
+void settings_page::on_trayCheckBox_clicked(bool checked)
+{
+
+}
+

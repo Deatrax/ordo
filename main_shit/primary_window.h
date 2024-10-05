@@ -7,9 +7,12 @@
 #include <QMainWindow>
 #include "qboxlayout.h"
 #include "qgroupbox.h"
+#include "qsystemtrayicon.h"
 #include "routinecell.h"
 #include "routinetimecell.h"
 #include "upnextelement.h"
+#include <QCloseEvent>
+#include <QMessageBox>
 
 namespace Ui {
 class primary_window;
@@ -112,6 +115,7 @@ public:
     int currentMaterialTabs=0;
     int newboxLimit=0;
     FlowLayout *layout;
+    bool trayEnabled=true;
 
 
     void clearLayout(QLayout *layout);
@@ -173,6 +177,21 @@ private slots:
 
 private:
     Ui::primary_window *ui;
+    QAction *minimizeAction;
+    QAction *maximizeAction;
+    QAction *restoreAction;
+    QAction *quitAction;
+    QMenu *trayIconMenu;
+    QSystemTrayIcon *trayIcon;
+
+    void setAutoStartWindows(bool flag);
+    void createTrayActions();
+    void createSysTray();
+    void setClickableOptions(bool visible);
+    void iconActivated(QSystemTrayIcon::ActivationReason reason);
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 };
 
 #endif // PRIMARY_WINDOW_H

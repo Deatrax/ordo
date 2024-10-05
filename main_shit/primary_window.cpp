@@ -45,6 +45,7 @@ primary_window::primary_window(QWidget *parent)
     ui->upCommingBackButton->hide();
     setAcceptDrops(true);
     ui->tabWidget_2->removeTab(1);
+    setWindowIcon(QIcon(":/images/ordo_icon.jpg"));
 
 
     // Add custom FileDropWidget to the layout
@@ -54,9 +55,13 @@ primary_window::primary_window(QWidget *parent)
     layout->addWidget(dropWidget);
     ui->dropArea->setLayout(layout);
 
-
-// #ifdef _WIN32
-//     ensure_directory_and_open_file()
+    //icon tray=================>
+    createTrayActions();
+    setClickableOptions(true);
+    createSysTray();
+    connect(trayIcon, &QSystemTrayIcon::activated, this, &primary_window::iconActivated);
+    if(trayEnabled) trayIcon->show();
+    //==========================>
 
 }
 
@@ -1353,3 +1358,115 @@ void primary_window::on_tabWidget_2_currentChanged(int index)
     }
 }
 
+
+
+
+//=========tray icon==========
+
+
+void primary_window::createTrayActions(){
+    minimizeAction = new QAction(tr("Mi&nimize"), this);
+    connect(minimizeAction, &QAction::triggered, this, [this](){
+        this->hide();
+        setClickableOptions(false);
+    });
+
+    maximizeAction = new QAction(tr("Ma&ximize"), this);
+    connect(maximizeAction, &QAction::triggered, this, &QWidget::showMaximized);
+
+    restoreAction = new QAction(tr("&Restore"), this);
+    connect(restoreAction, &QAction::triggered, this, [this]() {
+        this->showNormal();  // Restore the window
+        setClickableOptions(true);  // Call setClickableOptions(true)
+    });
+
+    quitAction = new QAction(tr("&Quit"), this);
+    connect(quitAction, &QAction::triggered, qApp, &QCoreApplication::quit);
+}
+
+
+void primary_window::createSysTray(){
+    trayIconMenu = new QMenu(this);
+    trayIconMenu->addAction(minimizeAction);
+    trayIconMenu->addAction(maximizeAction);
+    trayIconMenu->addAction(restoreAction);
+    trayIconMenu->addSeparator();
+    trayIconMenu->addAction(quitAction);
+
+    QString menuStyle =
+        "QMenu {"
+        "    background-color: #fff;"
+        "    border: 1px solid #e2e8f0;"
+        "    border-radius: 5px;"
+        "    font-family: 'Basier circle', -apple-system, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"
+        "    font-size: 15px;"
+        "    font-weight: 600;"
+        "    padding: 5px;"
+        "}"
+        "QMenu::item {"
+        "    background-color: #fff;"
+        "    color: #0d172a;"
+        "    padding: 5px 10px;"
+        "    border-radius: 5px;"
+        "    margin: 5px 0;"
+        "}"
+        "QMenu::item:selected {"
+        "    background-color: #221D23;"
+        "    color: #fff;"
+        "}";
+
+    trayIconMenu->setStyleSheet(menuStyle);
+
+
+    trayIcon = new QSystemTrayIcon(this);
+    trayIcon->setContextMenu(trayIconMenu);
+    trayIcon->setIcon(QIcon(":/images/ordo_icon.jpg"));
+}
+
+
+
+void primary_window::setClickableOptions(bool visible)
+{
+    minimizeAction->setEnabled(visible);
+    maximizeAction->setEnabled(!isMaximized());
+    restoreAction->setEnabled(!visible);
+}
+
+void primary_window::iconActivated(QSystemTrayIcon::ActivationReason reason)
+{
+    switch (reason) {
+    case QSystemTrayIcon::Trigger:
+        qDebug("single click detected");
+        break;
+    case QSystemTrayIcon::DoubleClick:
+        qDebug("dounel click detedted");
+        break;
+    case QSystemTrayIcon::MiddleClick:
+        qDebug("middle click detedted");
+        break;
+    default:
+        ;
+    }
+}
+
+
+void primary_window::closeEvent(QCloseEvent *event)
+{
+    setClickableOptions(false);
+    if (!event->spontaneous() || !isVisible())
+        return;
+    if (trayIcon->isVisible()) {
+        QMessageBox::information(this, tr("Systray"),
+                                 tr("The program will keep running in the "
+                                    "system tray. To terminate the program, "
+                                    "choose <b>Quit</b> in the context menu "
+                                    "of the system tray entry.")
+                                 );
+        hide();
+
+        event->ignore();
+    }
+}
+
+
+//=======END OF TRAY ICON===========================

@@ -1,0 +1,110 @@
+1. create QActions and add them to the contextual menu of systray 
+
+
+void Window::createActions()
+{   header:
+    QAction *minimizeAction;
+    QAction *maximizeAction;
+    QAction *restoreAction;
+    QAction *quitAction;
+
+    CPP:
+    minimizeAction = new QAction(tr("Mi&nimize"), this);
+    connect(minimizeAction, &QAction::triggered, this, &QWidget::hide);
+
+    maximizeAction = new QAction(tr("Ma&ximize"), this);
+    connect(maximizeAction, &QAction::triggered, this, &QWidget::showMaximized);
+
+    restoreAction = new QAction(tr("&Restore"), this);
+    connect(restoreAction, &QAction::triggered, this, &QWidget::showNormal);
+
+    quitAction = new QAction(tr("&Quit"), this);
+    connect(quitAction, &QAction::triggered, qApp, &QCoreApplication::quit);
+}
+
+void Window::setIcon(int index)
+{
+    QIcon icon = iconComboBox->itemIcon(index);
+    trayIcon->setIcon(icon);
+    setWindowIcon(icon);
+
+    trayIcon->setToolTip(iconComboBox->itemText(index));
+}
+
+2. make the systray itself and add the actions
+
+
+void Window::createTrayIcon()
+{   
+    header: 
+    QMenu *trayIconMenu;
+    QSystemTrayIcon *trayIcon;
+
+    CPP:
+    trayIconMenu = new QMenu(this);
+    trayIconMenu->addAction(minimizeAction);
+    trayIconMenu->addAction(maximizeAction);
+    trayIconMenu->addAction(restoreAction);
+    trayIconMenu->addSeparator();
+    trayIconMenu->addAction(quitAction);
+
+    trayIcon = new QSystemTrayIcon(this);
+    trayIcon->setContextMenu(trayIconMenu);
+}
+
+
+3. Add signal-slot connections
+
+
+connect(showIconCheckBox, &QAbstractButton::toggled, trayIcon, &QSystemTrayIcon::setVisible);
+void Window::setVisible(bool visible)
+{
+    minimizeAction->setEnabled(visible);
+    maximizeAction->setEnabled(!isMaximized());
+    restoreAction->setEnabled(isMaximized() || !visible);
+    QDialog::setVisible(visible);
+}
+
+
+4. Add on click functions for tray icon 
+
+
+connect(trayIcon, &QSystemTrayIcon::activated, this, &Window::iconActivated);
+void Window::iconActivated(QSystemTrayIcon::ActivationReason reason)
+{
+    switch (reason) {
+    case QSystemTrayIcon::Trigger:
+    case QSystemTrayIcon::DoubleClick:
+        iconComboBox->setCurrentIndex((iconComboBox->currentIndex() + 1) % iconComboBox->count());
+        break;
+    case QSystemTrayIcon::MiddleClick:
+        showMessage();
+        break;
+    default:
+        ;
+    }
+}
+
+
+5. enable or show the icon in the constructor
+
+trayIcon->show();
+
+
+6. handle main window close event
+
+
+void Window::closeEvent(QCloseEvent *event)
+{
+    if (!event->spontaneous() || !isVisible())
+        return;
+    if (trayIcon->isVisible()) {
+        QMessageBox::information(this, tr("Systray"),
+                                 tr("The program will keep running in the "
+                                    "system tray. To terminate the program, "
+                                    "choose <b>Quit</b> in the context menu "
+                                    "of the system tray entry."));
+        hide();
+        event->ignore();
+    }
+}
