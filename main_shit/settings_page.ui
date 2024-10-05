@@ -133,6 +133,9 @@ color:black;
           </item>
           <item>
            <widget class="QGroupBox" name="GeneralSettignsTitleBar_2">
+            <property name="styleSheet">
+             <string notr="true">QGroupBox{border:0px;}</string>
+            </property>
             <property name="title">
              <string/>
             </property>

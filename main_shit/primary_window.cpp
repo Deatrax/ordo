@@ -127,6 +127,14 @@ int primary_window::loadConfig(){
         setWindowTitle("Ordo");
         loadMiniRoutine();
 
+        fgets(buff,498,fp);
+        fgets(buff,498,fp);
+        if (char *p = strrchr(buff, '\n')) *p = '\0';
+        qDebug("got the last  line=%s",buff);
+        if(!strcmp("tray enabled",buff))trayEnabled=true;
+        else trayEnabled=false;
+
+
     if(fp!=NULL) fclose(fp);
     return 0;
 }
@@ -1456,12 +1464,17 @@ void primary_window::closeEvent(QCloseEvent *event)
     if (!event->spontaneous() || !isVisible())
         return;
     if (trayIcon->isVisible()) {
-        QMessageBox::information(this, tr("Systray"),
-                                 tr("The program will keep running in the "
-                                    "system tray. To terminate the program, "
-                                    "choose <b>Quit</b> in the context menu "
-                                    "of the system tray entry.")
-                                 );
+        QMessageBox msgBox;
+        msgBox.setWindowTitle(tr("Systray"));
+        msgBox.setText(tr("The program will keep running in the "
+                          "system tray. To terminate the program, "
+                          "choose <b>Quit</b> in the context menu "
+                          "of the system tray entry."));
+
+        msgBox.setStyleSheet(messageboxStyle);
+
+        msgBox.exec();
+
         hide();
 
         event->ignore();

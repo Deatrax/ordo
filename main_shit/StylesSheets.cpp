@@ -11,6 +11,7 @@ QString islandStyle;
 QString LabelStyleBordered;
 QString LabelStyleBorderless;
 QString mainBG;
+QString messageboxStyle;
 void applyLightTheme();
 void applyDarkTheme();
 
@@ -122,6 +123,16 @@ void applyLightTheme() {
         "background:#FFFFF0";
 
     mainBG = "background:#FFF2D8";
+
+    messageboxStyle=
+        "QMessageBox {"
+                "    font-size: 15px;"
+                "    font-weight: 600;"
+                "    line-height: 1;"
+                "    padding: 2px 2px;"
+                "    color: black;"
+                "background:#FFF2D8"
+                "}";
 }
 
 // Similarly, add applyDarkTheme()
