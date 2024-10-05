@@ -2,6 +2,11 @@
 #include "ui_settings_page.h"
 #include "StylesSheets.h"
 #include "first_run.h"
+#include <QSettings>
+#include <QDir>
+#include <QMessageBox>
+
+
 
 settings_page::settings_page(primary_window *mainwindow,QWidget *parent)
     : QWidget(parent)
@@ -34,6 +39,23 @@ settings_page::~settings_page(){
 
 void settings_page::on_loginCheckBox_clicked(bool checked)
 {
+    if(checked!=m_mainWindow->loginEnabled){
+        setAutoStartWindows(checked);
+        //preparing for getting the configs file
+        char file[260]="uconfig.spenc";
+        make_appData_filePath(file);
+        //open and change the file
+        if(checked==false){
+            char newline[]="login disabled";
+            replaceLINE(file,5,newline);
+            m_mainWindow->loginEnabled=false;
+        }
+        else{
+            char newline[]="login enabled";
+            replaceLINE(file,5,newline);
+            m_mainWindow->loginEnabled=true;
+        }
+    }
 
 }
 
@@ -61,3 +83,15 @@ void settings_page::on_trayCheckBox_clicked(bool checked)
     else if(checked==m_mainWindow->trayEnabled) return;
 }
 
+
+void settings_page::setAutoStartWindows(bool flag) {
+    QString appName = "Test app";
+    QString appPath = QDir::toNativeSeparators(QCoreApplication::applicationFilePath());
+
+    QSettings settings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
+    if (flag) {
+        settings.setValue(appName, appPath);
+    } else {
+        settings.remove(appName);
+    }
+}

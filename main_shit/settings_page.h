@@ -16,6 +16,7 @@ public:
     explicit settings_page(primary_window *mainwindow, QWidget *parent = nullptr);
     ~settings_page();
 
+    void setAutoStartWindows(bool flag);
 private slots:
     void on_loginCheckBox_clicked(bool checked);
 
