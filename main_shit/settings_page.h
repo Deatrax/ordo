@@ -17,10 +17,13 @@ public:
     ~settings_page();
 
     void setAutoStartWindows(bool flag);
+    void ascendSemester();
 private slots:
     void on_loginCheckBox_clicked(bool checked);
 
     void on_trayCheckBox_clicked(bool checked);
+
+    void on_ascendSemesterButton_clicked();
 
 private:
     Ui::settings_page *ui;

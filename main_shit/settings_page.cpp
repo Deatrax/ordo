@@ -138,6 +138,49 @@ void settings_page::setAutoStartWindows(bool flag) {
 
 void settings_page::on_ascendSemesterButton_clicked()
 {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle(tr("Systray"));
+    msgBox.setText(tr("Are you sure you want to ascend to "
+                      "the next semester? Doing so will make "
+                      "a new folder in the app's home path "
+                      "and also change the items visible in "
+                      "the meterials tab and move them to \"past cources\""));
 
+    msgBox.setStyleSheet(messageboxStyle);
+
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No); // Set No as the default button
+
+    int ret = msgBox.exec();
+
+    if (ret == QMessageBox::Yes) {
+        // User clicked Yes, perform the action
+        ascendSemester();
+    } else if (ret == QMessageBox::No) {
+        // User clicked No, cancel the action
+        ascendSemester();
+    }
 }
 
+void settings_page::ascendSemester(){
+    int year=m_mainWindow->year.toInt();
+    int semester=m_mainWindow->semester.toInt();
+
+    if(semester==m_mainWindow->semPerYear){
+        semester=1;
+        year++;
+    }
+    else semester++;
+    char buffer[10];
+    _itoa_s(m_mainWindow->semPerYear,buffer,10);
+    std::string str=buffer;
+    _itoa_s(year,buffer,10);
+    str+=',';
+    str+=buffer;
+    _itoa_s(semester,buffer,10);
+    str+=',';
+    str+=buffer;
+    str+=',';
+    qDebug("the resultant line for asension:%s",str.c_str());
+
+}
