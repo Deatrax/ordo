@@ -13,6 +13,7 @@ settings_page::settings_page(primary_window *mainwindow,QWidget *parent)
     , ui(new Ui::settings_page)
     , m_mainWindow(mainwindow)
 {
+    //ui->SettingsTabWidget->setCurrentIndex(0);
     loadThemeFromFile();
     ui->setupUi(this);
     setStyleSheet(mainBG);
@@ -32,6 +33,11 @@ settings_page::settings_page(primary_window *mainwindow,QWidget *parent)
         ui->loginCheckBox->setChecked(true);
     }
     else ui->loginCheckBox->setChecked(false);
+
+    ui->current_year->setText(m_mainWindow->year);
+    ui->currentSemester->setText(m_mainWindow->semester);
+    ui->semesterPerYear->setText(QString::number(m_mainWindow->semPerYear));
+    ui->SettingsTabWidget->setCurrentIndex(0);
 }
 settings_page::~settings_page(){
     delete ui;
