@@ -18,6 +18,7 @@ public:
 
     void setAutoStartWindows(bool flag);
     void ascendSemester();
+    void addstufftocoursebox();
 private slots:
     void on_loginCheckBox_clicked(bool checked);
 

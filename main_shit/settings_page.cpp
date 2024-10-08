@@ -38,6 +38,42 @@ settings_page::settings_page(primary_window *mainwindow,QWidget *parent)
     ui->currentSemester->setText(m_mainWindow->semester);
     ui->semesterPerYear->setText(QString::number(m_mainWindow->semPerYear));
     ui->SettingsTabWidget->setCurrentIndex(0);
+    ui->courseNameGroupBox->hide();
+
+    addstufftocoursebox();
+
+#ifdef _WIN32
+    QString tabBarStyle =
+        "QTabBar::tab {"
+        "   background-color: #f0f0f0;"           // Background color of the tab
+        "   border: 1px solid #c0c0c0;"           // Border for each tab
+        "   padding: 4px;"                       // Padding inside the tab
+        "   margin: 1px;"                         // Margin around the tabs
+        "   font-size: 14px;"                     // Font size for the tab text
+        "   color: #333;"                         // Text color for the tab
+        "}"
+        "QTabBar::tab:selected {"
+        "   background-color: #FFF2D8;"           // Background color for selected tab
+        "   color: #000;"                         // Text color for selected tab
+        "   border-bottom:0px ;"        // Prevents border between selected tab and tab content
+        "   border-top-left-radius: 5px;"        // Top-left rounded corner
+        "   border-top-right-radius: 5px;"       // Top-right rounded corner
+        "}"
+        "QTabBar::tab:!selected {"
+        "   background-color: #f0f0f0;"           // Background for unselected tabs
+        "   color: #555;"                         // Text color for unselected tabs
+        "}"
+        "QTabBar::tab:hover {"
+        "   background-color: #e0e0e0;"           // Background on hover
+        "   color: #000;"                         // Text color on hover
+        "}";
+
+    ui->SettingsTabWidget->tabBar()->setStyleSheet(tabBarStyle);
+
+#endif
+
+    ui->courseSettingExtra->hide();
+
 }
 settings_page::~settings_page(){
     delete ui;
@@ -144,7 +180,8 @@ void settings_page::on_ascendSemesterButton_clicked()
                       "the next semester? Doing so will make "
                       "a new folder in the app's home path "
                       "and also change the items visible in "
-                      "the meterials tab and move them to \"past cources\""));
+                      "the meterials tab and move them to \"past cources\""
+                      "Doing so will also require the app to ve restarted"));
 
     msgBox.setStyleSheet(messageboxStyle);
 
@@ -182,5 +219,17 @@ void settings_page::ascendSemester(){
     str+=buffer;
     str+=',';
     qDebug("the resultant line for asension:%s",str.c_str());
+    //preparing for getting the configs file
+    char file[260]="uconfig.spenc";
+    make_appData_filePath(file);
+    //open and change the file
+    char newline[20];
+    strncpy_s(newline,20,str.c_str(),20);
+    replaceLINE(file,3,newline);
+
+}
+
+
+void settings_page::addstufftocoursebox(){
 
 }
