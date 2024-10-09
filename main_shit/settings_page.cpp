@@ -209,23 +209,29 @@ void settings_page::ascendSemester(){
     }
     else semester++;
     char buffer[10];
-    _itoa_s(m_mainWindow->semPerYear,buffer,10);
-    std::string str=buffer;
-    _itoa_s(year,buffer,10);
-    str+=',';
-    str+=buffer;
-    _itoa_s(semester,buffer,10);
-    str+=',';
-    str+=buffer;
-    str+=',';
-    qDebug("the resultant line for asension:%s",str.c_str());
-    //preparing for getting the configs file
-    char file[260]="uconfig.spenc";
+    // Convert m_mainWindow->semPerYear to string
+    std::string str = std::to_string(m_mainWindow->semPerYear);
+
+    // Convert year to string and append
+    str += ',' + std::to_string(year);
+
+    // Convert semester to string and append
+    str += ',' + std::to_string(semester);
+
+    // Log the resultant string
+    qDebug("the resultant line for asension: %s", str.c_str());
+
+    // Preparing for getting the configs file
+    char file[260] = "uconfig.spenc";
     make_appData_filePath(file);
-    //open and change the file
+
+    // Open and change the file
     char newline[20];
-    strncpy_s(newline,20,str.c_str(),20);
-    replaceLINE(file,3,newline);
+    std::copy(str.begin(), str.begin() + 20, newline);
+    newline[19] = '\0';  // Ensure null termination
+
+    replaceLINE(file, 3, newline);
+
 
 }
 
