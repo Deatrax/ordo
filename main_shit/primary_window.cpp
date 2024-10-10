@@ -739,11 +739,11 @@ void primary_window::on_up_coming_button_clicked()
 
 void primary_window::on_assignments_button_clicked()
 {
-    ui->main_content_stack->setCurrentIndex(5);
     ui->main_content_stack->setCurrentIndex(4);
     clearLayout(ui->upNextArea->layout());
     upcommingMode=2;
-
+    ui->upCommingChangeButton->show();
+    ui->upCommingBackButton->hide();
 
 
     time_t current_time;
@@ -756,23 +756,26 @@ void primary_window::on_assignments_button_clicked()
     // Extract month (0-indexed) and add 1 to get 1-based month
     int month = time_info->tm_mon + 1;
 
-    FILE *sf=fopen("upcoming.md","rb");
+    int year = time_info->tm_year + 1900;
+
+    char file[260]="upcoming.md";
+    make_appData_filePath(file);
+    FILE *sf=fopen(file,"rb");
     if(sf==NULL){
         upnextElement *upnxt=new upnextElement(this);
         ui->upNextArea->layout()->addWidget(upnxt);
-
         upnxt->settextName("No data found!\n Add using the button above...");
         if(sf!=NULL) fclose(sf);
     }
     else{
         if(sf!=NULL) fclose(sf);
-        int num=get_number_of_lines("upcoming.md");
+        int num=get_number_of_lines(file);
         int skip=0;
         printf("got no of lines:%d\n",num);
         upcoming* thing = allocate1Dupcoming(num);
         int ret=gettasks(thing,&skip);
 
-        std::vector<upnextElement*> unxt(num);
+        unxt.resize(num);
         printf("\n no of lines skiped:%d\n",skip);
         for (int i = 0; i < num; i++)
         {
@@ -783,6 +786,7 @@ void primary_window::on_assignments_button_clicked()
                 unxt[i]->settextType(thing[i].type);
                 unxt[i]->settextDeadL(thing[i].date,thing[i].month,thing[i].year);
                 unxt[i]->settextRem(thing[i].time);
+                unxt[i]->sourceLine=thing[i].lineNum;
                 ui->upNextArea->layout()->addWidget(unxt[i]);
             }
 
@@ -960,7 +964,6 @@ void primary_window::on_exams_button_clicked()
     upcommingMode=3;
 
 
-
     time_t current_time;
     struct tm *time_info;
     // Get current time
@@ -971,7 +974,11 @@ void primary_window::on_exams_button_clicked()
     // Extract month (0-indexed) and add 1 to get 1-based month
     int month = time_info->tm_mon + 1;
 
-    FILE *sf=fopen("upcoming.md","rb");
+    int year = time_info->tm_year + 1900;
+
+    char file[260]="upcoming.md";
+    make_appData_filePath(file);
+    FILE *sf=fopen(file,"rb");
     if(sf==NULL){
         upnextElement *upnxt=new upnextElement(this);
         ui->upNextArea->layout()->addWidget(upnxt);
@@ -980,13 +987,13 @@ void primary_window::on_exams_button_clicked()
     }
     else{
         if(sf!=NULL) fclose(sf);
-        int num=get_number_of_lines("upcoming.md");
+        int num=get_number_of_lines(file);
         int skip=0;
         printf("got no of lines:%d\n",num);
         upcoming* thing = allocate1Dupcoming(num);
         int ret=gettasks(thing,&skip);
 
-        std::vector<upnextElement*> unxt(num);
+        unxt.resize(num);
         printf("\n no of lines skiped:%d\n",skip);
         for (int i = 0; i < num; i++)
         {
@@ -997,11 +1004,12 @@ void primary_window::on_exams_button_clicked()
                 unxt[i]->settextType(thing[i].type);
                 unxt[i]->settextDeadL(thing[i].date,thing[i].month,thing[i].year);
                 unxt[i]->settextRem(thing[i].time);
+                unxt[i]->sourceLine=thing[i].lineNum;
                 ui->upNextArea->layout()->addWidget(unxt[i]);
             }
 
         }
-
+        free1Dupcoming(thing);
     }
 
     ui->upNextArea->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Fixed, QSizePolicy::Expanding));
