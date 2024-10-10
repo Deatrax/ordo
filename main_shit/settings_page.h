@@ -26,6 +26,10 @@ private slots:
 
     void on_ascendSemesterButton_clicked();
 
+    void on_rollBackSemester_clicked();
+
+    void on_manualModifyButton_clicked();
+
 private:
     Ui::settings_page *ui;
     primary_window *m_mainWindow;

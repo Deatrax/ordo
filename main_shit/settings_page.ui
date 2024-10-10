@@ -539,7 +539,7 @@ QPushButton:hover {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_6">
+                 <widget class="QPushButton" name="manualModifyButton">
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
   background-color: #fff;
@@ -580,7 +580,7 @@ QPushButton:hover {
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_9">
                 <item>
-                 <widget class="QLineEdit" name="lineEdit">
+                 <widget class="QLineEdit" name="CourseNameLineEdit">
                   <property name="styleSheet">
                    <string notr="true">border:2px solid black;
 border-radius: 10px;

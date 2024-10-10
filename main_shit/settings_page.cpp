@@ -5,6 +5,10 @@
 #include <QSettings>
 #include <QDir>
 #include <QMessageBox>
+#include <algorithm>
+#ifdef min
+#undef min
+#endif
 
 
 
@@ -227,7 +231,7 @@ void settings_page::ascendSemester(){
 
     // Open and change the file
     char newline[20];
-    std::copy(str.begin(), str.begin() + 20, newline);
+    std::copy(str.begin(), str.begin() + str.length(), newline);
     newline[19] = '\0';  // Ensure null termination
 
     replaceLINE(file, 3, newline);
@@ -239,3 +243,46 @@ void settings_page::ascendSemester(){
 void settings_page::addstufftocoursebox(){
 
 }
+
+void settings_page::on_rollBackSemester_clicked()
+{
+    int year=m_mainWindow->year.toInt();
+    int semester=m_mainWindow->semester.toInt();
+
+    if(semester==1){
+        semester=m_mainWindow->semPerYear;
+        year--;
+    }
+    else semester--;
+    char buffer[10];
+    // Convert m_mainWindow->semPerYear to string
+    std::string str = std::to_string(m_mainWindow->semPerYear);
+
+    // Convert year to string and append
+    str += ',' + std::to_string(year);
+
+    // Convert semester to string and append
+    str += ',' + std::to_string(semester);
+
+    // Log the resultant string
+    qDebug("the resultant line for asension: %s", str.c_str());
+
+    // Preparing for getting the configs file
+    char file[260] = "uconfig.spenc";
+    make_appData_filePath(file);
+    int cont = std::min(7, static_cast<int>(str.length()));
+    // Open and change the file
+    char newline[20];
+    std::copy(str.begin(), str.begin() + str.length(), newline);
+    newline[str.length()] = '\0';  // Ensure null termination
+
+    replaceLINE(file, 3, newline);
+
+}
+
+
+void settings_page::on_manualModifyButton_clicked()
+{
+
+}
+
