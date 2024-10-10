@@ -199,7 +199,6 @@ void settings_page::on_ascendSemesterButton_clicked()
         ascendSemester();
     } else if (ret == QMessageBox::No) {
         // User clicked No, cancel the action
-        ascendSemester();
     }
 }
 
@@ -236,7 +235,7 @@ void settings_page::ascendSemester(){
 
     replaceLINE(file, 3, newline);
 
-
+    m_mainWindow->restartApplication();
 }
 
 
@@ -246,6 +245,36 @@ void settings_page::addstufftocoursebox(){
 
 void settings_page::on_rollBackSemester_clicked()
 {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle(tr("Systray"));
+    msgBox.setText(tr("Are you sure you want to roll back to "
+                      "the next semester? Doing so will change  "
+                      "the materials tab to the immediate previous semester"
+                      "and if the previous semester was not used"
+                      "then it will make the previous semsester folder"
+                      "Doing so will also require the app to ve restarted"));
+
+    msgBox.setStyleSheet(messageboxStyle);
+
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No); // Set No as the default button
+
+    int ret = msgBox.exec();
+
+    if (ret == QMessageBox::Yes) {
+        // User clicked Yes, perform the action
+        rollback_semester();
+    } else if (ret == QMessageBox::No) {
+        // User clicked No, cancel the action
+    }
+
+
+
+
+
+}
+
+void settings_page::rollback_semester(){
     int year=m_mainWindow->year.toInt();
     int semester=m_mainWindow->semester.toInt();
 
@@ -278,6 +307,7 @@ void settings_page::on_rollBackSemester_clicked()
 
     replaceLINE(file, 3, newline);
 
+    m_mainWindow->restartApplication();
 }
 
 

@@ -136,6 +136,7 @@ public:
     void refreshCurrentPage();
     void updateCourse(std::string newPath, int line);
     void trayVisibility(bool flag);
+    void restartApplication();
 private slots:
     void on_home_button_clicked();
 

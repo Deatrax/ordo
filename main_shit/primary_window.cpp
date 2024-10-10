@@ -24,6 +24,9 @@
 #include "StylesSheets.h"
 #include <QLabel>
 #include <QGroupBox>
+#include <QCoreApplication>
+#include <QProcess>
+
 
 //=========GLOBAL VARIABLE SPACE=====>
 elinks* MyLink;
@@ -1492,3 +1495,16 @@ void primary_window::trayVisibility(bool flag){
     flag? trayIcon->show() : trayIcon->hide();
 }
 //=======END OF TRAY ICON===========================
+
+
+
+void primary_window::restartApplication() {
+    // Get the current application path
+    QString program = QCoreApplication::applicationFilePath();
+
+    // Restart the application
+    QProcess::startDetached(program, QStringList());
+
+    // Exit the current application
+    QCoreApplication::exit();
+}
