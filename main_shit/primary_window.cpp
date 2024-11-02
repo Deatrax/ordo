@@ -1018,10 +1018,15 @@ void primary_window::on_exams_button_clicked()
 
 void primary_window::on_settings_button_clicked()
 {
-    settings_page* setp=new settings_page(this);
-
+    if(settingsOpened) return;
+    settings_page* setp = new settings_page(this);
+    setp->setAttribute(Qt::WA_DeleteOnClose);  // Deletes window on close to free memory
+    setp->setWindowModality(Qt::ApplicationModal);
     setp->show();
+    // setp->raise();  // Bring the window to the front
+    // setp->activateWindow();  // Set focus to the window
     ui->main_content_stack->setCurrentIndex(7);
+    settingsOpened=true;
 
 }
 

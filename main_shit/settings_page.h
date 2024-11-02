@@ -34,6 +34,10 @@ private slots:
 private:
     Ui::settings_page *ui;
     primary_window *m_mainWindow;
+
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 };
 
 #endif // SETTINGS_PAGE_H

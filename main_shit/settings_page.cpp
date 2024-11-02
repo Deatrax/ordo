@@ -316,3 +316,9 @@ void settings_page::on_manualModifyButton_clicked()
 
 }
 
+void settings_page::closeEvent(QCloseEvent *event)
+{
+    m_mainWindow->settingsOpened=false;
+    QWidget::closeEvent(event);
+}
+

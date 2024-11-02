@@ -119,6 +119,7 @@ public:
     FlowLayout *layout;
     bool trayEnabled=true;
     bool loginEnabled;
+    bool settingsOpened=false;
 
 
     void clearLayout(QLayout *layout);
