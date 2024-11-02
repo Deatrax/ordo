@@ -26,7 +26,7 @@ settings_page::settings_page(primary_window *mainwindow,QWidget *parent)
     // char file[260]="uconfig.spenc";
     // make_appData_filePath(file);
     //ui->SettingsTabWidget->tabBar()->hide();
-    ui->displayNameLabel->setText("Fuck your name");
+    // ui->displayNameLabel->setText("Fuck your name");
     ui->DisplayNameLineEdit->setStyleSheet(LabelStyleBorderless);
     if(m_mainWindow->trayEnabled==true){
         ui->trayCheckBox->setChecked(true);
@@ -211,7 +211,6 @@ void settings_page::ascendSemester(){
         year++;
     }
     else semester++;
-    char buffer[10];
     // Convert m_mainWindow->semPerYear to string
     std::string str = std::to_string(m_mainWindow->semPerYear);
 
@@ -283,7 +282,6 @@ void settings_page::rollback_semester(){
         year--;
     }
     else semester--;
-    char buffer[10];
     // Convert m_mainWindow->semPerYear to string
     std::string str = std::to_string(m_mainWindow->semPerYear);
 
@@ -320,5 +318,11 @@ void settings_page::closeEvent(QCloseEvent *event)
 {
     m_mainWindow->settingsOpened=false;
     QWidget::closeEvent(event);
+}
+
+
+void settings_page::on_diaplayNameChangeButton_clicked()
+{
+
 }
 

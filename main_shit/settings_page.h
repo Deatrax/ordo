@@ -31,6 +31,8 @@ private slots:
 
     void on_manualModifyButton_clicked();
 
+    void on_diaplayNameChangeButton_clicked();
+
 private:
     Ui::settings_page *ui;
     primary_window *m_mainWindow;
