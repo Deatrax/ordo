@@ -853,7 +853,8 @@ void primary_window::on_pushButton_5_clicked()
         return;
     }
     obj=new browserWindow(this);
-    connect(obj, &browserWindow::destroyed, this, &primary_window::deleteBrowserInstance);
+    obj->setAttribute(Qt::WA_DeleteOnClose);
+    //connect(obj, &browserWindow::destroyed, this, &primary_window::deleteBrowserInstance);
 
 
     //dat[1][strcspn(dat[1], "\n")] = '\0';
