@@ -1,4 +1,5 @@
 #include "settings_page.h"
+#include "modifycoursecell.h"
 #include "ui_settings_page.h"
 #include "StylesSheets.h"
 #include "first_run.h"
@@ -239,13 +240,29 @@ void settings_page::ascendSemester(){
 
 
 void settings_page::addstufftocoursebox(){
+    sprintf(m_mainWindow->coursedatPath,"coursedat%d.spenc",m_mainWindow->currSemst);
+    make_appData_filePath(m_mainWindow->coursedatPath);
+    int nums=get_number_of_lines(m_mainWindow->coursedatPath);
+    qDebug("number of lines in the course file=%d",nums);
+    if(nums<1 || nums==-1){
 
-    if(m_mainWindow->coursesLoaded){
-        NULL;
+        return;
     }
-    else{
-        NULL;
+
+    courseContainer* corsCont;
+    corsCont=allocate1DcourseConainer(nums);
+    read_course(corsCont,nums,m_mainWindow->coursedatPath);
+    printf("\n=====read ran successfully");
+
+    for (int i = 0; i<nums; i++){
+        QListWidgetItem *item = new QListWidgetItem(ui->course_list);
+        modifyCourseCell* cell=new modifyCourseCell(m_mainWindow,this);\
+        cell->init(corsCont[i].course_name, corsCont[i].coursePath,(i+1));
+        int heit=cell->sizeHint().height();
+        item->setSizeHint(QSize(0,heit));
+        ui->course_list->setItemWidget(item, cell);
     }
+    free1DcourseContainer(corsCont);
 }
 
 void settings_page::on_rollBackSemester_clicked()
@@ -335,6 +352,27 @@ void settings_page::on_diaplayNameChangeButton_clicked()
 
 void settings_page::on_SettingsTabWidget_currentChanged(int index)
 {
+
+}
+
+
+void settings_page::on_courseSettingRename_clicked()
+{
+    QListWidgetItem *currentItem = ui->course_list->currentItem();
+    if (currentItem) {
+        // Retrieve the associated modifyCourseCell widget
+        modifyCourseCell *cell = qobject_cast<modifyCourseCell *>(ui->course_list->itemWidget(currentItem));
+
+        // Check if casting was successful
+        if (cell) {
+            // Now you can access modifyCourseCell functions and properties
+            cell->renameCourse();  // Example function call, assuming renameCourse() is a function in modifyCourseCell
+        } else {
+            qWarning("Failed to cast item widget to modifyCourseCell.");
+        }
+    } else {
+        qWarning("No item selected.");
+    }
 
 }
 

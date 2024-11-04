@@ -373,7 +373,7 @@ QPushButton:hover {
           <string notr="true"/>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="home_page">
           <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -1244,8 +1244,8 @@ QGroupBox{background: #00000000}</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>98</width>
-                   <height>28</height>
+                   <width>1039</width>
+                   <height>588</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_83"/>

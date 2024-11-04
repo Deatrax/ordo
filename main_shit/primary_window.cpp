@@ -358,10 +358,12 @@ void primary_window::on_all_material_button_clicked()
         //     layout->addWidget(nb[i]);
         //*/
 
+
     corsCont=allocate1DcourseConainer(nums);
     read_course(corsCont,nums,coursedatPath);
     printf("\n=====read ran successfully");
     coursesLoaded=true;
+
 
     nb=(newbox**)malloc(nums*sizeof(newbox*));
     if(nb==NULL) return;
@@ -1027,7 +1029,7 @@ void primary_window::on_settings_button_clicked()
     setp->show();
     // setp->raise();  // Bring the window to the front
     // setp->activateWindow();  // Set focus to the window
-    ui->main_content_stack->setCurrentIndex(7);
+    //ui->main_content_stack->setCurrentIndex(7);
     settingsOpened=true;
 
 }
@@ -1347,12 +1349,14 @@ void primary_window::updateCourse(std::string newPath,int line){
     snprintf(arr2,(newPath.length()+1),"%s\0",newPath.c_str()); //adding the null terminator
     replaceLINE(coursedatPath,line,arr2);
     free1DCharArray(arr2);
-    resetFlag(1);
-    on_all_material_button_clicked();
+    if(allMaterialsOpened){
+        resetFlag(1);
+        on_all_material_button_clicked();
+    }
 }
 
 ///
-/// \brief primary_window::resetFlag resets the skip ui generation flag for the selected page
+/// @brief primary_window::resetFlag resets the skip ui generation flag for the selected page
 /// \param flag 1 for materials, 2 for routine, 3 for external links, 4 for assignemnt, 5 for upcomming, 6 for exams
 ///
 void primary_window::resetFlag(int flag){

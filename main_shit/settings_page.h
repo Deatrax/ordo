@@ -35,6 +35,8 @@ private slots:
 
     void on_SettingsTabWidget_currentChanged(int index);
 
+    void on_courseSettingRename_clicked();
+
 private:
     Ui::settings_page *ui;
     primary_window *m_mainWindow;
