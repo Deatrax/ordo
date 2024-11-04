@@ -33,6 +33,8 @@ private slots:
 
     void on_diaplayNameChangeButton_clicked();
 
+    void on_SettingsTabWidget_currentChanged(int index);
+
 private:
     Ui::settings_page *ui;
     primary_window *m_mainWindow;

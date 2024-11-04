@@ -591,36 +591,6 @@ QPushButton:hover {
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="courseNameGroupBox">
-               <property name="title">
-                <string/>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
-                <item>
-                 <widget class="QLineEdit" name="CourseNameLineEdit">
-                  <property name="styleSheet">
-                   <string notr="true">border:2px solid black;
-border-radius: 10px;
-font-size: 15px;
-  font-weight: 600;
-  line-height: 1;
-  padding: 2px 2px;</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Enter new course name</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
               <widget class="QGroupBox" name="groupBox_7">
                <property name="styleSheet">
                 <string notr="true">border:0px solid black;
@@ -640,7 +610,7 @@ color:black;
                  <number>20</number>
                 </property>
                 <item>
-                 <widget class="QListWidget" name="listWidget">
+                 <widget class="QListWidget" name="course_list">
                   <property name="styleSheet">
                    <string notr="true">border:1px solid black;
 border-radius:10px;</string>

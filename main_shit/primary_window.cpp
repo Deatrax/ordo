@@ -361,6 +361,7 @@ void primary_window::on_all_material_button_clicked()
     corsCont=allocate1DcourseConainer(nums);
     read_course(corsCont,nums,coursedatPath);
     printf("\n=====read ran successfully");
+    coursesLoaded=true;
 
     nb=(newbox**)malloc(nums*sizeof(newbox*));
     if(nb==NULL) return;

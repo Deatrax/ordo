@@ -22,6 +22,7 @@ SOURCES += \
     materialelement.cpp \
     materialnavcell.cpp \
     materialsnav.cpp \
+    modifycoursecell.cpp \
     new_routine.cpp \
     newbox.cpp \
     primary_window.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     materialelement.h \
     materialnavcell.h \
     materialsnav.h \
+    modifycoursecell.h \
     new_routine.h \
     newbox.h \
     primary_window.h \
@@ -66,6 +68,7 @@ FORMS += \
     materialelement.ui \
     materialnavcell.ui \
     materialsnav.ui \
+    modifycoursecell.ui \
     new_routine.ui \
     newbox.ui \
     primary_window.ui \

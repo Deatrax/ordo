@@ -42,7 +42,7 @@ settings_page::settings_page(primary_window *mainwindow,QWidget *parent)
     ui->currentSemester->setText(m_mainWindow->semester);
     ui->semesterPerYear->setText(QString::number(m_mainWindow->semPerYear));
     ui->SettingsTabWidget->setCurrentIndex(0);
-    ui->courseNameGroupBox->hide();
+    //ui->courseNameGroupBox->hide();
 
     addstufftocoursebox();
 
@@ -240,6 +240,12 @@ void settings_page::ascendSemester(){
 
 void settings_page::addstufftocoursebox(){
 
+    if(m_mainWindow->coursesLoaded){
+        NULL;
+    }
+    else{
+        NULL;
+    }
 }
 
 void settings_page::on_rollBackSemester_clicked()
@@ -322,6 +328,12 @@ void settings_page::closeEvent(QCloseEvent *event)
 
 
 void settings_page::on_diaplayNameChangeButton_clicked()
+{
+
+}
+
+
+void settings_page::on_SettingsTabWidget_currentChanged(int index)
 {
 
 }

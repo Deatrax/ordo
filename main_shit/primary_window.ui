@@ -373,7 +373,7 @@ QPushButton:hover {
           <string notr="true"/>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="home_page">
           <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -780,7 +780,7 @@ QPushButton:hover {
 color:black;</string>
            </property>
            <property name="text">
-            <string>notes fotes</string>
+            <string>Feature not ready yet</string>
            </property>
           </widget>
           <widget class="QFrame" name="frame_3">
@@ -1244,8 +1244,8 @@ QGroupBox{background: #00000000}</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1039</width>
-                   <height>588</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_83"/>

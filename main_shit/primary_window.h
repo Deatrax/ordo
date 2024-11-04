@@ -120,6 +120,7 @@ public:
     bool trayEnabled=true;
     bool loginEnabled;
     bool settingsOpened=false;
+    bool coursesLoaded=false;
 
 
     void clearLayout(QLayout *layout);
