@@ -373,7 +373,7 @@ QPushButton:hover {
           <string notr="true"/>
          </property>
          <property name="currentIndex">
-          <number>6</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="home_page">
           <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -1234,6 +1234,21 @@ QGroupBox{background: #00000000}</string>
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_82">
+              <property name="spacing">
+               <number>3</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
               <item>
                <widget class="QScrollArea" name="bal">
                 <property name="widgetResizable">
@@ -1244,8 +1259,8 @@ QGroupBox{background: #00000000}</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1039</width>
-                   <height>588</height>
+                   <width>1051</width>
+                   <height>590</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_83"/>
