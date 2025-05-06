@@ -1,4 +1,4 @@
-# 📚 Study Management Application (SIMS)
+# 📚 Study Management Application (Ordo)
 
 A Qt-based desktop application developed in the 2nd semester to help students organize their study materials, manage class schedules, keep track of assignments and exams, and access essential academic resources from a unified platform.
 
